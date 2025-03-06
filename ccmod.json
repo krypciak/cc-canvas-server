@@ -1,0 +1,13 @@
+{
+    "id": "cc-canvas-server",
+    "version": "0.0.1",
+    "title": "Canvas server",
+    "description": "Stream canvas data and input updates",
+    "repository": "https://github.com/krypciak/cc-canvas-server",
+    "tags": ["library", "dev"],
+    "authors": "krypek",
+    "icons": {
+        "24": "icon/icon.png"
+    },
+    "plugin": "plugin.js"
+}
