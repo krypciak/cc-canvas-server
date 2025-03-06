@@ -26,9 +26,15 @@ importers:
       '@typescript-eslint/parser':
         specifier: ^6.20.0
         version: 6.21.0(eslint@8.57.0)(typescript@5.4.2)
+      cc-instanceinator:
+        specifier: github:krypciak/cc-instanceinator
+        version: https://codeload.github.com/krypciak/cc-instanceinator/tar.gz/1c081e0543465dca57b160c9fc72808d0a8cf38d
       ccmodmanager:
         specifier: github:CCDirectLink/CCModManager
         version: https://codeload.github.com/CCDirectLink/CCModManager/tar.gz/c91a66b487f39572eac9609e09abb8a3ac73de3c
+      crossnode:
+        specifier: github:krypciak/crossnode
+        version: https://codeload.github.com/krypciak/crossnode/tar.gz/cb10b431d6ca34b872ef6db347413ca6ced671cb
       esbuild:
         specifier: ^0.20.0
         version: 0.20.1
@@ -422,6 +428,10 @@ packages:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
     engines: {node: '>=6'}
 
+  cc-instanceinator@https://codeload.github.com/krypciak/cc-instanceinator/tar.gz/1c081e0543465dca57b160c9fc72808d0a8cf38d:
+    resolution: {tarball: https://codeload.github.com/krypciak/cc-instanceinator/tar.gz/1c081e0543465dca57b160c9fc72808d0a8cf38d}
+    version: 0.0.1
+
   ccmodmanager@https://codeload.github.com/CCDirectLink/CCModManager/tar.gz/c91a66b487f39572eac9609e09abb8a3ac73de3c:
     resolution: {tarball: https://codeload.github.com/CCDirectLink/CCModManager/tar.gz/c91a66b487f39572eac9609e09abb8a3ac73de3c}
     version: 0.9.22
@@ -458,6 +468,10 @@ packages:
   cross-spawn@7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
     engines: {node: '>= 8'}
+
+  crossnode@https://codeload.github.com/krypciak/crossnode/tar.gz/cb10b431d6ca34b872ef6db347413ca6ced671cb:
+    resolution: {tarball: https://codeload.github.com/krypciak/crossnode/tar.gz/cb10b431d6ca34b872ef6db347413ca6ced671cb}
+    version: 1.0.0
 
   debug@2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
@@ -1413,6 +1427,8 @@ snapshots:
 
   callsites@3.1.0: {}
 
+  cc-instanceinator@https://codeload.github.com/krypciak/cc-instanceinator/tar.gz/1c081e0543465dca57b160c9fc72808d0a8cf38d: {}
+
   ccmodmanager@https://codeload.github.com/CCDirectLink/CCModManager/tar.gz/c91a66b487f39572eac9609e09abb8a3ac73de3c: {}
 
   chalk@4.1.2:
@@ -1443,6 +1459,8 @@ snapshots:
       path-key: 3.1.1
       shebang-command: 2.0.0
       which: 2.0.2
+
+  crossnode@https://codeload.github.com/krypciak/crossnode/tar.gz/cb10b431d6ca34b872ef6db347413ca6ced671cb: {}
 
   debug@2.6.9:
     dependencies:
