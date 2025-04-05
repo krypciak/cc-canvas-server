@@ -9,5 +9,8 @@
     "icons": {
         "24": "icon/icon.png"
     },
+    "dependencies": {
+        "cc-instanceinator": ">=0.0.1"
+    },
     "plugin": "plugin.js"
 }

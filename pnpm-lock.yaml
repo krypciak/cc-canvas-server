@@ -28,13 +28,13 @@ importers:
         version: 6.21.0(eslint@8.57.0)(typescript@5.4.2)
       cc-instanceinator:
         specifier: github:krypciak/cc-instanceinator
-        version: https://codeload.github.com/krypciak/cc-instanceinator/tar.gz/1c081e0543465dca57b160c9fc72808d0a8cf38d
+        version: https://codeload.github.com/krypciak/cc-instanceinator/tar.gz/8d3e479698ce6c1630dd5226e147257462235a97
       ccmodmanager:
         specifier: github:CCDirectLink/CCModManager
-        version: https://codeload.github.com/CCDirectLink/CCModManager/tar.gz/c91a66b487f39572eac9609e09abb8a3ac73de3c
+        version: https://codeload.github.com/CCDirectLink/CCModManager/tar.gz/b9a8aa88be6c12d977b007f7938320bf50348a53
       crossnode:
         specifier: github:krypciak/crossnode
-        version: https://codeload.github.com/krypciak/crossnode/tar.gz/cb10b431d6ca34b872ef6db347413ca6ced671cb
+        version: https://codeload.github.com/krypciak/crossnode/tar.gz/e5b86988e0220735a1223700c7c4227fa2de5d36
       esbuild:
         specifier: ^0.20.0
         version: 0.20.1
@@ -47,6 +47,9 @@ importers:
       express:
         specifier: ^4.21.2
         version: 4.21.2
+      peerjs:
+        specifier: ^1.5.4
+        version: 1.5.4
       prettier:
         specifier: 3.2.4
         version: 3.2.4
@@ -55,7 +58,7 @@ importers:
         version: 5.4.2
       ultimate-crosscode-typedefs:
         specifier: github:krypciak/ultimate-crosscode-typedefs
-        version: https://codeload.github.com/krypciak/ultimate-crosscode-typedefs/tar.gz/211165b5dd97b2a15005cf504597b5766757e949
+        version: https://codeload.github.com/krypciak/ultimate-crosscode-typedefs/tar.gz/4787e48e1d1c7a3c194cecea0ab38a86d608544a
       ws:
         specifier: ^8.18.1
         version: 8.18.1
@@ -232,6 +235,10 @@ packages:
 
   '@humanwhocodes/object-schema@2.0.2':
     resolution: {integrity: sha512-6EwiSjwWYP7pTckG6I5eyFANjPhmPjUX9JRLUSfNPC7FX7zK9gyZAfUEaECL6ALTpGX5AjnBq3C9XmVWPitNpw==}
+
+  '@msgpack/msgpack@2.8.0':
+    resolution: {integrity: sha512-h9u4u/jiIRKbq25PM+zymTyW6bhTzELvOoUd+AvYriWOAKpLGnIamaET3pnHYoI5iYphAHBI4ayx0MehR+VVPQ==}
+    engines: {node: '>= 10'}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -428,13 +435,13 @@ packages:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
     engines: {node: '>=6'}
 
-  cc-instanceinator@https://codeload.github.com/krypciak/cc-instanceinator/tar.gz/1c081e0543465dca57b160c9fc72808d0a8cf38d:
-    resolution: {tarball: https://codeload.github.com/krypciak/cc-instanceinator/tar.gz/1c081e0543465dca57b160c9fc72808d0a8cf38d}
+  cc-instanceinator@https://codeload.github.com/krypciak/cc-instanceinator/tar.gz/8d3e479698ce6c1630dd5226e147257462235a97:
+    resolution: {tarball: https://codeload.github.com/krypciak/cc-instanceinator/tar.gz/8d3e479698ce6c1630dd5226e147257462235a97}
     version: 0.0.1
 
-  ccmodmanager@https://codeload.github.com/CCDirectLink/CCModManager/tar.gz/c91a66b487f39572eac9609e09abb8a3ac73de3c:
-    resolution: {tarball: https://codeload.github.com/CCDirectLink/CCModManager/tar.gz/c91a66b487f39572eac9609e09abb8a3ac73de3c}
-    version: 0.9.22
+  ccmodmanager@https://codeload.github.com/CCDirectLink/CCModManager/tar.gz/b9a8aa88be6c12d977b007f7938320bf50348a53:
+    resolution: {tarball: https://codeload.github.com/CCDirectLink/CCModManager/tar.gz/b9a8aa88be6c12d977b007f7938320bf50348a53}
+    version: 1.0.3
 
   chalk@4.1.2:
     resolution: {integrity: sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==}
@@ -469,8 +476,8 @@ packages:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
     engines: {node: '>= 8'}
 
-  crossnode@https://codeload.github.com/krypciak/crossnode/tar.gz/cb10b431d6ca34b872ef6db347413ca6ced671cb:
-    resolution: {tarball: https://codeload.github.com/krypciak/crossnode/tar.gz/cb10b431d6ca34b872ef6db347413ca6ced671cb}
+  crossnode@https://codeload.github.com/krypciak/crossnode/tar.gz/e5b86988e0220735a1223700c7c4227fa2de5d36:
+    resolution: {tarball: https://codeload.github.com/krypciak/crossnode/tar.gz/e5b86988e0220735a1223700c7c4227fa2de5d36}
     version: 1.0.0
 
   debug@2.6.9:
@@ -590,6 +597,9 @@ packages:
   etag@1.8.1:
     resolution: {integrity: sha512-aIL5Fx7mawVa300al2BnEE4iNvo1qETxLrPI/o05L7z6go7fCw1J6EQmbK4FmJ2AS7kgVF/KEZWufBfdClMcPg==}
     engines: {node: '>= 0.6'}
+
+  eventemitter3@4.0.7:
+    resolution: {integrity: sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==}
 
   express@4.21.2:
     resolution: {integrity: sha512-28HqgMZAmih1Czt9ny7qr6ek2qddF4FclbMzwhCREB6OFfH+rXAnuNCwo1/wFvrtbgsQDb4kSbX9de9lFbrXnA==}
@@ -883,6 +893,14 @@ packages:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
     engines: {node: '>=8'}
 
+  peerjs-js-binarypack@2.1.0:
+    resolution: {integrity: sha512-YIwCC+pTzp3Bi8jPI9UFKO0t0SLo6xALnHkiNt/iUFmUUZG0fEEmEyFKvjsDKweiFitzHRyhuh6NvyJZ4nNxMg==}
+    engines: {node: '>= 14.0.0'}
+
+  peerjs@1.5.4:
+    resolution: {integrity: sha512-yFsoLMnurJKlQbx6kVSBpOp+AlNldY1JQS2BrSsHLKCZnq6t7saHleuHM5svuLNbQkUJXHLF3sKOJB1K0xulOw==}
+    engines: {node: '>= 14'}
+
   picomatch@2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
@@ -939,6 +957,9 @@ packages:
 
   safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
+
+  sdp@3.2.0:
+    resolution: {integrity: sha512-d7wDPgDV3DDiqulJjKiV2865wKsJ34YI+NDREbm+FySq6WuKOikwyNQcm+doLAZ1O6ltdO0SeKle2xMpN3Brgw==}
 
   semver@7.6.0:
     resolution: {integrity: sha512-EnwXhrlwXMk9gKu5/flx5sv/an57AkRplG3hTK68W7FRDN+k+OWBj65M7719OkA82XLBxrcX0KSHj+X5COhOVg==}
@@ -1034,8 +1055,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  ultimate-crosscode-typedefs@https://codeload.github.com/krypciak/ultimate-crosscode-typedefs/tar.gz/211165b5dd97b2a15005cf504597b5766757e949:
-    resolution: {tarball: https://codeload.github.com/krypciak/ultimate-crosscode-typedefs/tar.gz/211165b5dd97b2a15005cf504597b5766757e949}
+  ultimate-crosscode-typedefs@https://codeload.github.com/krypciak/ultimate-crosscode-typedefs/tar.gz/4787e48e1d1c7a3c194cecea0ab38a86d608544a:
+    resolution: {tarball: https://codeload.github.com/krypciak/ultimate-crosscode-typedefs/tar.gz/4787e48e1d1c7a3c194cecea0ab38a86d608544a}
     version: 0.0.1
     engines: {node: '>=10.0.0'}
 
@@ -1053,6 +1074,10 @@ packages:
   vary@1.1.2:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
+
+  webrtc-adapter@9.0.1:
+    resolution: {integrity: sha512-1AQO+d4ElfVSXyzNVTOewgGT/tAomwwztX/6e3totvyyzXPvXIIuUUjAmyZGbKBKbZOXauuJooZm3g6IuFuiNQ==}
+    engines: {node: '>=6.0.0', npm: '>=3.10.0'}
 
   which@2.0.2:
     resolution: {integrity: sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==}
@@ -1188,6 +1213,8 @@ snapshots:
   '@humanwhocodes/module-importer@1.0.1': {}
 
   '@humanwhocodes/object-schema@2.0.2': {}
+
+  '@msgpack/msgpack@2.8.0': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -1427,9 +1454,9 @@ snapshots:
 
   callsites@3.1.0: {}
 
-  cc-instanceinator@https://codeload.github.com/krypciak/cc-instanceinator/tar.gz/1c081e0543465dca57b160c9fc72808d0a8cf38d: {}
+  cc-instanceinator@https://codeload.github.com/krypciak/cc-instanceinator/tar.gz/8d3e479698ce6c1630dd5226e147257462235a97: {}
 
-  ccmodmanager@https://codeload.github.com/CCDirectLink/CCModManager/tar.gz/c91a66b487f39572eac9609e09abb8a3ac73de3c: {}
+  ccmodmanager@https://codeload.github.com/CCDirectLink/CCModManager/tar.gz/b9a8aa88be6c12d977b007f7938320bf50348a53: {}
 
   chalk@4.1.2:
     dependencies:
@@ -1460,7 +1487,7 @@ snapshots:
       shebang-command: 2.0.0
       which: 2.0.2
 
-  crossnode@https://codeload.github.com/krypciak/crossnode/tar.gz/cb10b431d6ca34b872ef6db347413ca6ced671cb: {}
+  crossnode@https://codeload.github.com/krypciak/crossnode/tar.gz/e5b86988e0220735a1223700c7c4227fa2de5d36: {}
 
   debug@2.6.9:
     dependencies:
@@ -1607,6 +1634,8 @@ snapshots:
   esutils@2.0.3: {}
 
   etag@1.8.1: {}
+
+  eventemitter3@4.0.7: {}
 
   express@4.21.2:
     dependencies:
@@ -1918,6 +1947,15 @@ snapshots:
 
   path-type@4.0.0: {}
 
+  peerjs-js-binarypack@2.1.0: {}
+
+  peerjs@1.5.4:
+    dependencies:
+      '@msgpack/msgpack': 2.8.0
+      eventemitter3: 4.0.7
+      peerjs-js-binarypack: 2.1.0
+      webrtc-adapter: 9.0.1
+
   picomatch@2.3.1: {}
 
   prelude-ls@1.2.1: {}
@@ -1961,6 +1999,8 @@ snapshots:
   safe-buffer@5.2.1: {}
 
   safer-buffer@2.1.2: {}
+
+  sdp@3.2.0: {}
 
   semver@7.6.0:
     dependencies:
@@ -2068,7 +2108,7 @@ snapshots:
 
   typescript@5.4.2: {}
 
-  ultimate-crosscode-typedefs@https://codeload.github.com/krypciak/ultimate-crosscode-typedefs/tar.gz/211165b5dd97b2a15005cf504597b5766757e949:
+  ultimate-crosscode-typedefs@https://codeload.github.com/krypciak/ultimate-crosscode-typedefs/tar.gz/4787e48e1d1c7a3c194cecea0ab38a86d608544a:
     dependencies:
       '@types/jquery': 1.10.45
       '@types/node': 11.15.54
@@ -2083,6 +2123,10 @@ snapshots:
   utils-merge@1.0.1: {}
 
   vary@1.1.2: {}
+
+  webrtc-adapter@9.0.1:
+    dependencies:
+      sdp: 3.2.0
 
   which@2.0.2:
     dependencies:

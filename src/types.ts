@@ -1,4 +1,6 @@
 import { Mod } from 'ultimate-crosscode-typedefs/modloader/mod'
+import type {} from 'crossnode/crossnode'
+import type {} from 'cc-instanceinator/src/plugin'
 
 export type Mod1 = Mod & {
     isCCModPacked: boolean
