@@ -13,6 +13,11 @@
         "vite": "^5.2"
     },
     "pnpm": {
-        "onlyBuiltDependencies": ["esbuild"]
+        "onlyBuiltDependencies": [
+            "esbuild"
+        ]
+    },
+    "dependencies": {
+        "socket.io-client": "^4.8.1"
     }
 }

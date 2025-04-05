@@ -1,7 +1,7 @@
 declare const canvas: HTMLCanvasElement
 declare const game: HTMLDivElement
 
-const sc = {
+export const sc = {
     DISPLAY_TYPE: {
         ORIGINAL: 0,
         SCALE_X2: 1,
@@ -10,14 +10,14 @@ const sc = {
     },
 }
 
-const ig = {
+export const ig = {
     system: {
         fps: 60,
         canvas,
         inputDom: game,
         width: 568,
         height: 320,
-        scale: 1,
+        scale: 4,
         context: canvas.getContext('2d', {
             alpha: false,
             desynchronized: true,
@@ -27,12 +27,7 @@ const ig = {
         screenWidth: 0 /* canvas style width */,
         screenHeight: 0 /* canvas style height */,
         resize() {
-            // this.contextWidth = this.width * this.scale
-            // this.contextHeight = this.height * this.scale
-            this.realWidth = this.width * this.scale
-            this.realHeight = this.height * this.scale
-            this.canvas.width = this.width * this.scale
-            this.canvas.height = this.height * this.scale
+            this.rescale()
             // this.zoomFocus.x =
             //     window.wm && wm.mapConfig && wm.mapConfig.settingsWidth
             //         ? (width - wm.mapConfig.settingsWidth) / 2
@@ -40,9 +35,18 @@ const ig = {
             // this.zoomFocus.y = height / 2
             this.screenWidth = +this.canvas.style.width.replace('px', '') || this.canvas.width
             this.screenHeight = +this.canvas.style.height.replace('px', '') || this.canvas.height
-            // this.imageSmoothingDisabled && (this.context[this.imageSmoothingKey] = false)
-            // this.contextScale != 1 && this.context.scale(this.contextScale, this.contextScale)
             this.updateCursorClass()
+        },
+        rescale() {
+            // this.contextWidth = this.width * this.scale
+            // this.contextHeight = this.height * this.scale
+            this.realWidth = this.width * this.scale
+            this.realHeight = this.height * this.scale
+            this.canvas.width = this.width * this.scale
+            this.canvas.height = this.height * this.scale
+            this.context.resetTransform()
+            this.context.imageSmoothingEnabled = false
+            this.context.scale(this.scale, this.scale)
         },
         setCanvasSize(width: number, height: number, hideBorder: boolean) {
             this.canvas.style.width = `${width}px`
@@ -99,6 +103,8 @@ const ig = {
         },
     },
 }
+// @ts-expect-error
+window.ig = ig
 
 function systemInit() {
     ig.system.resize()

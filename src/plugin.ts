@@ -13,15 +13,20 @@ export function poststart(func: () => void | Promise<void>, priority: number = 1
     poststartFunctions.push([func, priority])
 }
 
-export default class CanvasServer implements PluginClass {
+import './connection-interface'
+import { CanvasServer } from './canvas-server'
+
+export default class CCCanvasServer implements PluginClass {
     static dir: string
     static mod: Mod1
 
     constructor(mod: Mod1) {
-        CanvasServer.dir = mod.baseDirectory
-        CanvasServer.mod = mod
-        CanvasServer.mod.isCCL3 = mod.findAllAssets ? true : false
-        CanvasServer.mod.isCCModPacked = mod.baseDirectory.endsWith('.ccmod/')
+        CCCanvasServer.dir = mod.baseDirectory
+        CCCanvasServer.mod = mod
+        CCCanvasServer.mod.isCCL3 = mod.findAllAssets ? true : false
+        CCCanvasServer.mod.isCCModPacked = mod.baseDirectory.endsWith('.ccmod/')
+
+        global.canvasServer = window.canvasServer = new CanvasServer()
     }
 
     async prestart() {
