@@ -73,6 +73,7 @@ export class SocketIoServer implements DataServer {
 
 class SocketIoDataConnection implements DataConnection {
     closeListeners: ((conn: DataConnection) => void)[] = []
+    closed: boolean = false
 
     constructor(
         public instanceId: number,
@@ -95,6 +96,8 @@ class SocketIoDataConnection implements DataConnection {
         this.socket.emit('update', data)
     }
     close(): void {
+        if (this.closed) return
+        this.closed = true
         if (!this.socket.disconnected) this.socket.disconnect()
 
         const inst = instanceinator.instances[this.instanceId]
