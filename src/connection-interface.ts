@@ -1,5 +1,6 @@
 import { assert } from './assert'
 import { prestart } from './plugin'
+// @ts-ignore prevent type errors in cc-multibakery
 import type { DummyUpdateInput } from 'cc-multibakery/src/api'
 
 export interface DataServer {
