@@ -56,10 +56,10 @@ export class SocketIoServer implements DataServer {
             const username = `remote_${(Math.random() * 900 + 100).floor()}`
             const id = await canvasServer.requestInstanceId(username)
 
-            const closeCallback = () => {
+            const connection = new SocketIoDataConnection(id, socket)
+            connection.closeListeners.push(() => {
                 this.connections.erase(connection)
-            }
-            const connection = new SocketIoDataConnection(id, socket, closeCallback)
+            })
             this.connections.push(connection)
             socket.on('disconnect', () => connection.close())
         })
@@ -72,10 +72,11 @@ export class SocketIoServer implements DataServer {
 }
 
 class SocketIoDataConnection implements DataConnection {
+    closeListeners: ((conn: DataConnection) => void)[] = []
+
     constructor(
         public instanceId: number,
-        public socket: Socket,
-        public closeCallback: () => void
+        public socket: Socket
     ) {
         const inst = instanceinator.instances[instanceId]
         assert(inst)
@@ -100,6 +101,6 @@ class SocketIoDataConnection implements DataConnection {
         assert(inst)
         inst.ig.canvasDataConnection = undefined
 
-        this.closeCallback()
+        for (const func of this.closeListeners) func(this)
     }
 }

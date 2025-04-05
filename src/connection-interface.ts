@@ -11,6 +11,7 @@ export interface DataServer {
 }
 export interface DataConnection {
     instanceId: number
+    closeListeners: ((conn: DataConnection) => void)[]
 
     isConnected(): boolean
     send(data: unknown): void
