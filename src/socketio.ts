@@ -1,10 +1,12 @@
 import { assert } from './assert'
-import { DataConnection, DataServer, Packet } from './connection-interface'
+import { ClientPacket, DataConnection, DataServer, ServerPacket } from './connection-interface'
 import { Server as _Server, Socket as _Socket } from 'socket.io'
 
-type ClientToServerEvents = {}
+type ClientToServerEvents = {
+    input(data: ClientPacket): void
+}
 type ServerToClientEvents = {
-    update(data: Packet): void
+    update(data: ServerPacket): void
 }
 type InterServerEvents = {}
 type SocketData = never
@@ -37,7 +39,6 @@ export class SocketIoServer implements DataServer {
             if (typeof id === 'number') {
                 clearInterval(id)
             } else {
-                // @ts-expect-error
                 clearInterval(id.id)
             }
         }
@@ -51,6 +52,7 @@ export class SocketIoServer implements DataServer {
             },
         })
         this.io.on('connection', async socket => {
+            assert(canvasServer.requestInstanceId, 'connection before called canvasServer.requestInstanceId set!')
             const id = await canvasServer.requestInstanceId()
 
             const closeCallback = () => {
@@ -77,13 +79,17 @@ class SocketIoDataConnection implements DataConnection {
         const inst = instanceinator.instances[instanceId]
         assert(inst)
         inst.ig.canvasDataConnection = this
-        console.log(inst.ig.canvasDataConnection)
+
+        this.socket.on('input', packet => {
+            assert(canvasServer.inputCallback, 'input received before called canvasServer.inputCallback set!')
+            canvasServer.inputCallback(instanceId, packet)
+        })
     }
 
     isConnected() {
         return this.socket.connected
     }
-    send(data: Packet): void {
+    send(data: ServerPacket): void {
         this.socket.emit('update', data)
     }
     close(): void {

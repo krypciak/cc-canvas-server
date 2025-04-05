@@ -1,5 +1,6 @@
 import { assert } from './assert'
 import { prestart } from './plugin'
+import type { DummyUpdateInput } from 'cc-multibakery/src/api'
 
 export interface DataServer {
     connections: DataConnection[]
@@ -20,8 +21,12 @@ declare global {
         var canvasDataConnection: DataConnection | undefined
     }
 }
-export interface Packet {
+
+export interface ServerPacket {
     canvasData: ArrayBuffer
+}
+export interface ClientPacket {
+    input: DummyUpdateInput
 }
 
 prestart(() => {
@@ -31,7 +36,7 @@ prestart(() => {
             if (ig.canvasDataConnection) {
                 assert(ig.system.context)
                 const canvasData = ig.system.context.getImageData(0, 0, ig.system.canvas.width, ig.system.canvas.height)
-                const packet: Packet = {
+                const packet: ServerPacket = {
                     canvasData: canvasData.data,
                 }
                 ig.canvasDataConnection.send(packet)

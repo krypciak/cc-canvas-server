@@ -1,5 +1,4 @@
-import { assert } from './assert'
-import { DataServer } from './connection-interface'
+import { ClientPacket, DataServer } from './connection-interface'
 import { poststart } from './plugin'
 import { SocketIoServer } from './socketio'
 
@@ -16,16 +15,12 @@ export class CanvasServer {
 
     constructor() {}
 
-    async requestInstanceId() {
-        const id = 2
-        assert(instanceinator.instances[id])
-        return id
-    }
+    requestInstanceId?: () => Promise<number>
+    inputCallback?: (instanceId: number, packet: ClientPacket) => Promise<void>
 }
 
 poststart(() => {
     canvasServer.server = new SocketIoServer()
-    canvasServer.server.start()
     process.on('exit', () => {
         canvasServer.server.stop()
     })

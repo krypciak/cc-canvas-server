@@ -12,7 +12,9 @@
     "devDependencies": {
         "@types/jquery": "^3.5.32",
         "@types/node": "^11.15.54",
+        "cc-determine": "github:krypciak/cc-determine",
         "cc-instanceinator": "github:krypciak/cc-instanceinator",
+        "cc-multibakery": "github:krypciak/cc-multibakery",
         "ccmodmanager": "github:CCDirectLink/CCModManager",
         "crossnode": "github:krypciak/crossnode",
         "esbuild": "^0.20.2",

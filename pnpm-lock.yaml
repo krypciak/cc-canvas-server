@@ -18,9 +18,15 @@ importers:
       '@types/node':
         specifier: ^11.15.54
         version: 11.15.54
+      cc-determine:
+        specifier: github:krypciak/cc-determine
+        version: https://codeload.github.com/krypciak/cc-determine/tar.gz/8e7cce19c49e71483e49757ebfe29420a223cf47
       cc-instanceinator:
         specifier: github:krypciak/cc-instanceinator
         version: https://codeload.github.com/krypciak/cc-instanceinator/tar.gz/8d3e479698ce6c1630dd5226e147257462235a97
+      cc-multibakery:
+        specifier: github:krypciak/cc-multibakery
+        version: https://codeload.github.com/krypciak/cc-multibakery/tar.gz/9f5cc07501854b0957306c3638c3b7d75196882f
       ccmodmanager:
         specifier: github:CCDirectLink/CCModManager
         version: https://codeload.github.com/CCDirectLink/CCModManager/tar.gz/b9a8aa88be6c12d977b007f7938320bf50348a53
@@ -38,7 +44,7 @@ importers:
         version: 5.8.3
       ultimate-crosscode-typedefs:
         specifier: github:krypciak/ultimate-crosscode-typedefs
-        version: https://codeload.github.com/krypciak/ultimate-crosscode-typedefs/tar.gz/4787e48e1d1c7a3c194cecea0ab38a86d608544a
+        version: https://codeload.github.com/krypciak/ultimate-crosscode-typedefs/tar.gz/d3d657c94f910bfe9bf4f5721196cbbc4b688fe8
 
 packages:
 
@@ -209,8 +215,16 @@ packages:
     resolution: {integrity: sha512-lGe34o6EHj9y3Kts9R4ZYs/Gr+6N7MCaMlIFA3F1R2O5/m7K06AxfSeO5530PEERE6/WyEg3lsuyw4GHlPZHog==}
     engines: {node: ^4.5.0 || >= 5.9}
 
+  cc-determine@https://codeload.github.com/krypciak/cc-determine/tar.gz/8e7cce19c49e71483e49757ebfe29420a223cf47:
+    resolution: {tarball: https://codeload.github.com/krypciak/cc-determine/tar.gz/8e7cce19c49e71483e49757ebfe29420a223cf47}
+    version: 0.0.1
+
   cc-instanceinator@https://codeload.github.com/krypciak/cc-instanceinator/tar.gz/8d3e479698ce6c1630dd5226e147257462235a97:
     resolution: {tarball: https://codeload.github.com/krypciak/cc-instanceinator/tar.gz/8d3e479698ce6c1630dd5226e147257462235a97}
+    version: 0.0.1
+
+  cc-multibakery@https://codeload.github.com/krypciak/cc-multibakery/tar.gz/9f5cc07501854b0957306c3638c3b7d75196882f:
+    resolution: {tarball: https://codeload.github.com/krypciak/cc-multibakery/tar.gz/9f5cc07501854b0957306c3638c3b7d75196882f}
     version: 0.0.1
 
   ccmodmanager@https://codeload.github.com/CCDirectLink/CCModManager/tar.gz/b9a8aa88be6c12d977b007f7938320bf50348a53:
@@ -291,8 +305,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  ultimate-crosscode-typedefs@https://codeload.github.com/krypciak/ultimate-crosscode-typedefs/tar.gz/4787e48e1d1c7a3c194cecea0ab38a86d608544a:
-    resolution: {tarball: https://codeload.github.com/krypciak/ultimate-crosscode-typedefs/tar.gz/4787e48e1d1c7a3c194cecea0ab38a86d608544a}
+  ultimate-crosscode-typedefs@https://codeload.github.com/krypciak/ultimate-crosscode-typedefs/tar.gz/d3d657c94f910bfe9bf4f5721196cbbc4b688fe8:
+    resolution: {tarball: https://codeload.github.com/krypciak/ultimate-crosscode-typedefs/tar.gz/d3d657c94f910bfe9bf4f5721196cbbc4b688fe8}
     version: 0.0.1
     engines: {node: '>=10.0.0'}
 
@@ -408,7 +422,11 @@ snapshots:
 
   base64id@2.0.0: {}
 
+  cc-determine@https://codeload.github.com/krypciak/cc-determine/tar.gz/8e7cce19c49e71483e49757ebfe29420a223cf47: {}
+
   cc-instanceinator@https://codeload.github.com/krypciak/cc-instanceinator/tar.gz/8d3e479698ce6c1630dd5226e147257462235a97: {}
+
+  cc-multibakery@https://codeload.github.com/krypciak/cc-multibakery/tar.gz/9f5cc07501854b0957306c3638c3b7d75196882f: {}
 
   ccmodmanager@https://codeload.github.com/CCDirectLink/CCModManager/tar.gz/b9a8aa88be6c12d977b007f7938320bf50348a53: {}
 
@@ -515,7 +533,7 @@ snapshots:
 
   typescript@5.8.3: {}
 
-  ultimate-crosscode-typedefs@https://codeload.github.com/krypciak/ultimate-crosscode-typedefs/tar.gz/4787e48e1d1c7a3c194cecea0ab38a86d608544a:
+  ultimate-crosscode-typedefs@https://codeload.github.com/krypciak/ultimate-crosscode-typedefs/tar.gz/d3d657c94f910bfe9bf4f5721196cbbc4b688fe8:
     dependencies:
       '@types/jquery': 1.10.45
       '@types/node': 11.15.54

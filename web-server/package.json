@@ -10,6 +10,7 @@
     },
     "devDependencies": {
         "typescript": "^5.8.3",
+        "ultimate-crosscode-typedefs": "github:krypciak/ultimate-crosscode-typedefs",
         "vite": "^5.2"
     },
     "pnpm": {

@@ -1,3 +1,5 @@
+import { Input, INPUT_DEVICES, KEY } from './input'
+
 declare const canvas: HTMLCanvasElement
 declare const game: HTMLDivElement
 
@@ -26,6 +28,8 @@ export const ig = {
         realHeight: 0 /* canvas height after upscaling */,
         screenWidth: 0 /* canvas style width */,
         screenHeight: 0 /* canvas style height */,
+        focusLost: false,
+        windowFocusLost: false,
         resize() {
             this.rescale()
             // this.zoomFocus.x =
@@ -57,6 +61,12 @@ export const ig = {
             this.updateCursorClass()
         },
         updateCursorClass() {},
+        hasFocusLost() {
+            return this.focusLost || this.windowFocusLost
+        },
+        setWindowFocus(value: boolean) {
+            this.windowFocusLost = value
+        },
 
         // from sc.OptionModel
         _setDisplaySize() {
@@ -102,7 +112,12 @@ export const ig = {
             ig.system.setCanvasSize(width, height, drawBorders)
         },
     },
+    KEY,
+    INPUT_DEVICES,
+    Input,
+    input: new Input()
 }
+ig.input.init()
 // @ts-expect-error
 window.ig = ig
 
