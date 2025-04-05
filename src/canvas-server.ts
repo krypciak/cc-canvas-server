@@ -21,7 +21,7 @@ export class CanvasServer {
         })
     }
 
-    requestInstanceId?: () => Promise<number>
+    requestInstanceId?: (username: string) => Promise<number>
     inputCallback?: (instanceId: number, packet: ClientPacket) => Promise<void>
 
     SocketIoServer = SocketIoServer

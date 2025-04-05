@@ -53,7 +53,8 @@ export class SocketIoServer implements DataServer {
         })
         this.io.on('connection', async socket => {
             assert(canvasServer.requestInstanceId, 'connection before called canvasServer.requestInstanceId set!')
-            const id = await canvasServer.requestInstanceId()
+            const username = `remote_${(Math.random() * 900 + 100).floor()}`
+            const id = await canvasServer.requestInstanceId(username)
 
             const closeCallback = () => {
                 this.connections.erase(connection)
