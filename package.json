@@ -10,24 +10,15 @@
     },
     "type": "module",
     "devDependencies": {
-        "@types/express": "^5.0.0",
-        "@types/jquery": "^3.5.29",
-        "@types/node": "^11.6.0",
-        "@types/ws": "^8.18.0",
-        "@typescript-eslint/eslint-plugin": "^6.20.0",
-        "@typescript-eslint/parser": "^6.20.0",
+        "@types/jquery": "^3.5.32",
+        "@types/node": "^11.15.54",
         "cc-instanceinator": "github:krypciak/cc-instanceinator",
         "ccmodmanager": "github:CCDirectLink/CCModManager",
         "crossnode": "github:krypciak/crossnode",
-        "esbuild": "^0.20.0",
-        "eslint": "^8.56.0",
-        "eslint-config-prettier": "^9.1.0",
-        "express": "^4.21.2",
-        "peerjs": "^1.5.4",
+        "esbuild": "^0.20.2",
         "prettier": "3.2.4",
-        "typescript": "^5.3.3",
-        "ultimate-crosscode-typedefs": "github:krypciak/ultimate-crosscode-typedefs",
-        "ws": "^8.18.1"
+        "typescript": "^5.8.3",
+        "ultimate-crosscode-typedefs": "github:krypciak/ultimate-crosscode-typedefs"
     },
     "pnpm": {
         "onlyBuiltDependencies": [

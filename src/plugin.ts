@@ -7,13 +7,11 @@ export function prestart(func: () => void | Promise<void>, priority: number = 10
     prestartFunctions.push([func, priority])
 }
 
-// let poststartFunctions: [() => void | Promise<void>, number][]
-// export function poststart(func: () => void | Promise<void>, priority: number = 100) {
-//     poststartFunctions ??= []
-//     poststartFunctions.push([func, priority])
-// }
-
-import './webrtc'
+let poststartFunctions: [() => void | Promise<void>, number][]
+export function poststart(func: () => void | Promise<void>, priority: number = 100) {
+    poststartFunctions ??= []
+    poststartFunctions.push([func, priority])
+}
 
 export default class CanvasServer implements PluginClass {
     static dir: string
@@ -27,10 +25,10 @@ export default class CanvasServer implements PluginClass {
     }
 
     async prestart() {
-        await Promise.all(prestartFunctions.sort((a, b) => a[1] - b[1]).map(([f]) => f()))
+        await Promise.all((prestartFunctions ?? []).sort((a, b) => a[1] - b[1]).map(([f]) => f()))
     }
 
     async poststart() {
-        // await Promise.all((poststartFunctions ?? []).sort((a, b) => a[1] - b[1]).map(([f]) => f()))
+        await Promise.all((poststartFunctions ?? []).sort((a, b) => a[1] - b[1]).map(([f]) => f()))
     }
 }
