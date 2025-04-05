@@ -18,11 +18,19 @@ export const DEFAULT_SOCKETIO_PORT = 33405
 
 export class SocketIoServer implements DataServer {
     connections: SocketIoDataConnection[] = []
+    openListeners: ((conn: DataConnection) => void)[] = []
+    closeListeners: ((conn: DataConnection) => void)[] = []
     port: number = DEFAULT_SOCKETIO_PORT
     io!: Server
 
     constructor() {
         this.setIntervalWorkaround()
+        this.closeListeners.push(conn => {
+            this.connections.erase(conn as SocketIoDataConnection)
+        })
+        this.openListeners.push(conn => {
+            this.connections.push(conn as SocketIoDataConnection)
+        })
     }
 
     private setIntervalWorkaround() {
@@ -57,11 +65,7 @@ export class SocketIoServer implements DataServer {
             const id = await canvasServer.requestInstanceId(username)
 
             const connection = new SocketIoDataConnection(id, socket)
-            connection.closeListeners.push(() => {
-                this.connections.erase(connection)
-            })
-            this.connections.push(connection)
-            socket.on('disconnect', () => connection.close())
+            for (const func of this.openListeners) func(connection)
         })
         console.log('socketio: listening for connections')
     }
@@ -72,7 +76,6 @@ export class SocketIoServer implements DataServer {
 }
 
 class SocketIoDataConnection implements DataConnection {
-    closeListeners: ((conn: DataConnection) => void)[] = []
     closed: boolean = false
 
     constructor(
@@ -87,6 +90,7 @@ class SocketIoDataConnection implements DataConnection {
             assert(canvasServer.inputCallback, 'input received before called canvasServer.inputCallback set!')
             canvasServer.inputCallback(instanceId, packet)
         })
+        socket.on('disconnect', () => this.close())
     }
 
     isConnected() {
@@ -104,6 +108,6 @@ class SocketIoDataConnection implements DataConnection {
         assert(inst)
         inst.ig.canvasDataConnection = undefined
 
-        for (const func of this.closeListeners) func(this)
+        for (const func of canvasServer.server.closeListeners) func(this)
     }
 }

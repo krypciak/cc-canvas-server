@@ -5,13 +5,14 @@ import type { DummyUpdateInput } from 'cc-multibakery/src/api'
 
 export interface DataServer {
     connections: DataConnection[]
+    openListeners: ((conn: DataConnection) => void)[]
+    closeListeners: ((conn: DataConnection) => void)[]
 
     start(): Promise<void>
     stop(): Promise<void>
 }
 export interface DataConnection {
     instanceId: number
-    closeListeners: ((conn: DataConnection) => void)[]
 
     isConnected(): boolean
     send(data: unknown): void
