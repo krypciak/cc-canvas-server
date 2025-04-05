@@ -4,7 +4,7 @@
     "title": "Canvas server",
     "description": "Stream canvas data and input updates",
     "repository": "https://github.com/krypciak/cc-canvas-server",
-    "tags": ["library", "dev"],
+    "tags": ["library"],
     "authors": "krypek",
     "icons": {
         "24": "icon/icon.png"
