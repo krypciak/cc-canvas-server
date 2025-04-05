@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD013 MD024 MD001 MD045 -->
 
-# Example typescript CrossCode mod (compliation using esbuild)
+# cc-canvas-server
 
 ## Building
 
